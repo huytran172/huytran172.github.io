@@ -1,0 +1,25 @@
+.project-content
+    width: 90%
+    margin-left: auto
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    &__list
+        display: flex
+        overflow-x: scroll
+        overflow-y: hidden;
+
+        margin: auto 0
+        -webkit-overflow-scrolling: touch;
+        &::-webkit-scrollbar 
+            display: none;
+
+        &__item
+            min-width: 27vw
+            height: 70vh 
+            background: white
+            margin-right: 50px
+            border-radius: 10px
+            &:first-child
+                margin-left: 60px

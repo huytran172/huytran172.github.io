@@ -1,0 +1,45 @@
+.terminal
+    border-radius: 15px 15px 0 0
+
+    &__nav
+        height: 35px
+        border-radius: inherit
+        background: white
+        display: flex
+
+    &__main
+        background: $black__opaque
+        height: 100%     
+        p
+            padding: 10px 0 0 20px;
+            margin: 0
+            font-size: 1.2em
+            font-family: 'Operator Mono', 'Fira Code', 'Consolas'
+
+        &__command
+            color: $light--green
+            margin: 0 auto
+
+            i
+                color: white
+
+        &__response
+            color: white
+
+.mock-button
+    width: 17px
+    height: 17px
+    border-radius: 50%
+    margin: auto 5px 
+
+    &--first
+        margin-left: 15px
+
+    &--red
+        background: $primary__color
+
+    &--orange
+        background: $light--orange
+
+    &--green
+        background: $light--green
