@@ -23,6 +23,6 @@
 
     .terminal
         width: 70%
-        height: 70vh
+        height: 66vh
         margin: 3% auto
 </style>

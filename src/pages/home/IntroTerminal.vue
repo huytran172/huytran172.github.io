@@ -1,13 +1,18 @@
 <template lang="pug">
-.terminal
-    .terminal__nav
-        div.mock-button.mock-button--red.mock-button--first
-        div.mock-button.mock-button--orange
-        div.mock-button.mock-button--green
-    
-    .terminal__main
-        intro-terminal-command(v-for='text in displayText', :command='text.command', :reply='text.reply')
-    custom-button-continue
+transition(name='fade')
+    .terminal(v-if='terminalShow')
+        .terminal__nav
+            div.mock-button.mock-button--red.mock-button--first
+            div.mock-button.mock-button--orange
+            div.mock-button.mock-button--green
+        
+        .terminal__main
+            intro-terminal-command(
+                v-for='(text, index) in listText', 
+                :command='text.command', 
+                :reply='text.reply',
+                :delay='initialDelay + 2900 * index')
+        custom-button-continue
 
 </template>
 
@@ -20,13 +25,21 @@
         components: { CustomButtonContinue, IntroTerminalCommand },
         data() {
             return {
-                displayText: [
-                    { command: 'whoami', reply: 'Hello, my name is Huy Tran :D'},
+                initialDelay: 1000,
+                terminalShow: false,
+                listText: [
+                    { command: 'echo $whoami', reply: 'Hello, my name is Huy Tran :D'},
                     { command: 'echo $occupation', reply: 'I am a junior majoring in Computer Science at Worcester Polytechnic Institute'},
                     { command: 'echo $location', reply: 'Worcester, MA 01602, USA'},
                     { command: 'cat more.info', reply: 'Press Enter to continue...'}
                 ]
             }
+        },
+        mounted() {
+            this.terminalShow = true
+        },
+        methods: {
+            
         }
     }
 </script>
@@ -46,12 +59,8 @@
 
     &__main
         background: $black__opaque
-        height: 100%     
-        p
-            padding: 10px 0 0 20px
-            margin: 0
-            font-size: 1.2em
-            font-family: 'Operator Mono', 'Fira Code', 'Consolas'
+        height: 100%    
+        padding-top: 30px        
 
 .mock-button
     width: 17px
@@ -70,5 +79,11 @@
 
     &--green
         background: $light--green
+
+.fade-enter-active, .fade-leave-active 
+    transition: opacity 2s
+
+.fade-enter, .fade-leave-to  
+    opacity: 0
 
 </style>
