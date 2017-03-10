@@ -1,27 +1,62 @@
 <template lang="pug">
-div
-    p.terminal__main__command #[icon(name='angle-right')] {{ command }}
-    p.terminal__main__response {{ reply }}
+div(v-if='commandShow')
+    vue-typer(
+        :text='"> " + command',
+        :repeat='0',
+        initial-action='typing',
+        :pre-type-delay='500',
+        :type-delay='70',
+        caret-animation='solid')
+
+    transition(name='fade')
+        div(v-if='replyShow')
+            p.terminal__main__response {{ reply }}
 </template>
 
 <script>
+    import { VueTyper } from 'vue-typer';
+
     export default {
         name: 'IntroTerminalCommand',
-        props: ['command', 'reply']
+        components: { VueTyper },
+        props: ['command', 'reply', 'delay'],
+        data() {
+            return {
+                commandShow: false,
+                replyShow: false
+            }
+        },
+        mounted() {
+            setTimeout(() => this.commandShow = true, this.delay + 1000);
+            setTimeout(() => this.replyShow = true, this.delay + this.command.length * 70 + 2000);
+        }
     }
 </script>
+
+<style lang="sass" scoped>
+p
+    padding: 20px 0 20px 20px
+    margin: 0
+    font-size: 1.2em
+    font-family: 'Operator Mono', 'Fira Code', 'Consolas'
+</style>
 
 <style lang="sass">
 @import '../../css/0-tools/bourbon/bourbon';
 @import '../../css/1-base/vars';
-
-.terminal__main__command
-    color: $light--green
-    margin: 0 auto
-    i
-        color: white
-
 .terminal__main__response
     color: white
-    
+
+.vue-typer 
+    font-family: 'Operator Mono', 'Fira Code', 'Consolas'
+    font-size: 1.3em
+    margin-left: 18px
+    .custom.char 
+        color: $light--green;
+    .custom.char.selected 
+        background-color: #264F78;
+    .custom.caret 
+        width: 10px;
+        background-color: #3F51B5;
+
 </style>
