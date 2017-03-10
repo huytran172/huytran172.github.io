@@ -28,7 +28,7 @@ transition(name='fade')
                 initialDelay: 1000,
                 terminalShow: false,
                 listText: [
-                    { command: 'echo $whoami', reply: 'Hello, my name is Huy Tran :D'},
+                    { command: 'whoami', reply: 'Hello, my name is Huy Tran :D'},
                     { command: 'echo $occupation', reply: 'I am a junior majoring in Computer Science at Worcester Polytechnic Institute'},
                     { command: 'echo $location', reply: 'Worcester, MA 01602, USA'},
                     { command: 'cat more.info', reply: 'Press Enter to continue...'}
