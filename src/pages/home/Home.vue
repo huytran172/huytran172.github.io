@@ -57,5 +57,4 @@ div
     .main-header
         height: 600px
 
-
 </style>

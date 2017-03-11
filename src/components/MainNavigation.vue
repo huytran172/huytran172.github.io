@@ -136,8 +136,8 @@
         .mobile-nav-toggle
             display: block
             position: absolute
-            right: 50px
-            top: 30px
+            right: 40px
+            top: 33px
 
             .fa-icon
                 color: white
