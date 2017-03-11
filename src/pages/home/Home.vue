@@ -3,6 +3,7 @@ div
     .main-header
         main-navigation
         intro-terminal
+        custom-button-continue
     .about
         vertical-navigation
         about-intro
@@ -13,10 +14,12 @@ div
     import VerticalNavigation from '../../components/VerticalNavigation.vue'
     import IntroTerminal from './IntroTerminal.vue'
     import AboutIntro from './AboutIntro.vue'
+    import CustomButtonContinue from '../../components/CustomButtonContinue.vue'
+
 
     export default {
         name: 'Home',
-        components: { MainNavigation, VerticalNavigation, IntroTerminal, AboutIntro },
+        components: { MainNavigation, VerticalNavigation, IntroTerminal, AboutIntro, CustomButtonContinue },
         created() {
             window.addEventListener('keyup', this.scrollToAbout)
         },
@@ -47,11 +50,11 @@ div
     @include linear-gradient(to bottom right, $primary__color--light, $primary__color)
     height: 100vh
 
-    .terminal
-        width: 70%
-        height: 66vh
-        margin: 3% auto
-
 .about
     display: flex
+
+@media only screen and (max-height: 450px)
+    .main-header
+        height: 600px
+
 </style>

@@ -27,4 +27,8 @@
         left: 9px
     &:hover
         background: white
+
+@media only screen and (max-width: 800px)
+    .custom-button__continue
+        display: none
 </style>
