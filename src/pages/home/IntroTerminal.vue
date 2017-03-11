@@ -12,17 +12,15 @@ transition(name='fade')
                 :command='text.command', 
                 :reply='text.reply',
                 :delay='initialDelay + 2900 * index')
-        custom-button-continue
 
 </template>
 
 <script>
-    import CustomButtonContinue from '../../components/CustomButtonContinue.vue';
     import IntroTerminalCommand from './IntroTerminalCommand.vue';
 
     export default {
         name: 'IntroTerminal',
-        components: { CustomButtonContinue, IntroTerminalCommand },
+        components: { IntroTerminalCommand },
         data() {
             return {
                 initialDelay: 1000,
@@ -50,6 +48,9 @@ transition(name='fade')
 
 .terminal
     border-radius: 15px 15px 0 0
+    width: 70%
+    height: 66vh
+    margin: 3% auto
 
     &__nav
         height: 35px
@@ -86,4 +87,11 @@ transition(name='fade')
 .fade-enter, .fade-leave-to  
     opacity: 0
 
+@media only screen and (max-width: 800px)
+    .terminal
+        width: 95%
+
+@media only screen and (max-height: 450px) 
+    .terminal
+        height: 400px
 </style>

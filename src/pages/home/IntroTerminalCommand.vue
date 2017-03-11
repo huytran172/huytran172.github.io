@@ -39,6 +39,13 @@ p
     margin: 0
     font-size: 1.2em
     font-family: 'Operator Mono', 'Fira Code', 'Consolas'
+
+@media only screen and (max-width: 450px)
+    p
+        font-size: 1em
+
+    .vue-typer
+        font-size: 1em
 </style>
 
 <style lang="sass">
