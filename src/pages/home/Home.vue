@@ -16,7 +16,6 @@ div
     import AboutIntro from './AboutIntro.vue'
     import CustomButtonContinue from '../../components/CustomButtonContinue.vue'
 
-
     export default {
         name: 'Home',
         components: { MainNavigation, VerticalNavigation, IntroTerminal, AboutIntro, CustomButtonContinue },
@@ -35,7 +34,7 @@ div
             scrollToAbout(e) {
                 if (e.keyCode == 13 && ! this.enterPressed) {
                     var height = this.$children[2].$el.clientHeight
-                    window.scrollTo(height, 0);
+                    window.scrollTo(height, 0)
                     this.enterPressed = true
                 }
             }
@@ -52,6 +51,11 @@ div
 
 .about
     display: flex
+
+@media only screen and (max-width: 840px)
+    .about
+        min-height: 100vh
+
 
 @media only screen and (max-height: 450px)
     .main-header

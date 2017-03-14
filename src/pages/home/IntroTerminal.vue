@@ -50,7 +50,8 @@ transition(name='fade')
     border-radius: 15px 15px 0 0
     width: 70%
     height: 66vh
-    margin: 3% auto
+    margin: 0 auto
+    padding-top: 150px
 
     &__nav
         height: 35px

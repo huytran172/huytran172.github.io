@@ -10,7 +10,9 @@
         ul.nav__list(v-if='width > 855')
             +nav-content
         
-        ul.mobile-nav__list(v-if="isOpened && width <= 855")
+        ul.mobile-nav__list(
+            :class="{'mobile-nav__list--open' : isOpened}",
+            v-if="width <= 855")
             .button--close(@click="isOpened = false")
                 icon(name="times", scale='3')
             +nav-content
@@ -20,7 +22,7 @@
 </template>
 
 <script>
-    import upperCase from '../filters/uppercase';
+    import upperCase from '../filters/uppercase'
     export default {
         name: 'MainNavigation',
         data() {
@@ -34,7 +36,7 @@
                     { name: 'contact', url: '/contact'},
                     { name: 'my projects', url: '/project'}
                 ]
-            };
+            }
         }, 
         methods: {
             upperCase,
@@ -45,11 +47,10 @@
                     'mobile-nav__list__item': this.width <= 855,
                     'nav__list__item--last': this.isLastChild(index) && this.width > 855,
                     'mobile-nav__list__item--last': this.isLastChild(index) && this.width <= 855
-                };
+                }
             },
             handleResize(e) {
                 this.width = document.documentElement.clientWidth + 15 // workaround, just plus scrollbar width
-                console.log(this.width)
             }
         },
         mounted() {
@@ -65,7 +66,10 @@
     display: flex
     flex-direction: rows
     background-color: rgba(0, 0, 0, 0.5)
-    
+    position: fixed
+    top: 0
+    width: 100%
+
     &__logo
         color: white
         font-family: $logo__font
@@ -109,11 +113,16 @@
             width: 250px 
             z-index: 1
             top: 0
-            right: 0
+            right: -300px 
             overflow-x: hidden
             padding-top: 60px
             position: fixed
             margin-top: 0
+            transition: right 0.5s ease-out
+
+            &--open
+                right: 0
+                transition: right 0.5s
 
             .button--close
                 color: white

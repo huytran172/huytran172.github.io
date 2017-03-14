@@ -40,4 +40,8 @@
             width: 40px
             height: 40px
 
+@media only screen and (max-width: 840px)
+    .vertical-nav
+        display: none
+
 </style>

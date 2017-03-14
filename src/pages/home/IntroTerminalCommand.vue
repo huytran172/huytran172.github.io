@@ -14,7 +14,7 @@ div(v-if='commandShow')
 </template>
 
 <script>
-    import { VueTyper } from 'vue-typer';
+    import { VueTyper } from 'vue-typer'
 
     export default {
         name: 'IntroTerminalCommand',
@@ -35,7 +35,7 @@ div(v-if='commandShow')
 
 <style lang="sass" scoped>
 p
-    padding: 20px 0 20px 20px
+    padding: 20px 5px 20px 20px
     margin: 0
     font-size: 1.2em
     font-family: 'Operator Mono', 'Fira Code', 'Consolas'

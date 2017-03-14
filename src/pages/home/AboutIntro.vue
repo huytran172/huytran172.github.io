@@ -27,7 +27,7 @@
     justify-content: center
     &__title
         text-align: center
-        letter-spacing: 0.4em
+        letter-spacing: 0.1em
     &__wrap
         display: flex
         justify-content: center
@@ -44,4 +44,34 @@
         &__content
             line-height: 1.5em
             font-size: 1.1em
+            text-align: justify
+            text-justify: inter-word 
+
+@media only screen and (max-width: 900px)
+    .intro
+        display: flex
+        padding-top: 10px
+
+        &__wrap
+            flex-direction: column
+
+            &__avatar
+                margin: 10px 0 10px 0
+
+@media only screen and (max-width: 650px)
+    .intro__title
+        display: none
+
+    .intro__wrap__content
+        font-size: 1em
+
+@media only screen and (max-width: 450px)
+    .intro__wrap
+        &__avatar
+            margin-top: 50px
+            img
+                width: 150px
+                height: 150px
+        &__content
+            line-height: 1.3em
 </style>
