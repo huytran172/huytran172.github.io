@@ -26,9 +26,10 @@ transition(name='fade')
                 initialDelay: 1000,
                 terminalShow: false,
                 listText: [
-                    { command: 'whoami', reply: 'Hello, my name is Huy Tran :D'},
-                    { command: 'echo $occupation', reply: 'I am a junior majoring in Computer Science at Worcester Polytechnic Institute'},
-                    { command: 'echo $location', reply: 'Worcester, MA 01602, USA'},
+                    { command: 'echo HuyTran::name()', reply: 'Hello, my name is Huy Tran :D'},
+                    { command: 'echo HuyTran::education()', reply: 'I\'m a senior majoring in Computer Science at Worcester Polytechnic Institute'},
+                    { command: 'echo HuyTran::address()', reply: 'Living in the heart of New England - Worcester, MA'},
+                    { command: 'echo HuyTran::work()', reply: 'I\'m a Front End Developer and Web Designer at www.mathspring.com - A Math Tutoring Web Application'},
                     { command: 'cat more.info', reply: 'Press Enter to continue...'}
                 ]
             }
@@ -43,10 +44,11 @@ transition(name='fade')
 </script>
 
 <style lang="sass">
-@import '../../css/0-tools/bourbon/bourbon';
-@import '../../css/1-base/vars';
+@import '../../css/0-tools/bourbon/bourbon'
+@import '../../css/1-base/vars'
 
 .terminal
+    font-family: 'Fira Code', 'Consolas', monospace !important
     border-radius: 15px 15px 0 0
     width: 70%
     height: 66vh

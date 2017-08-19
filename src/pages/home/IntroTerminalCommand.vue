@@ -37,8 +37,8 @@ div(v-if='commandShow')
 p
     padding: 20px 5px 20px 20px
     margin: 0
-    font-size: 1.2em
-    font-family: 'Operator Mono', 'Fira Code', 'Consolas'
+    font-size: 1.05em
+    font-family: 'Inconsolata', 'Fira Code', 'Operator Mono', 'Consolas', Monaco
 
 @media only screen and (max-width: 450px)
     p
@@ -49,21 +49,21 @@ p
 </style>
 
 <style lang="sass">
-@import '../../css/0-tools/bourbon/bourbon';
-@import '../../css/1-base/vars';
+@import '../../css/0-tools/bourbon/bourbon'
+@import '../../css/1-base/vars'
+
 .terminal__main__response
     color: white
 
 .vue-typer 
-    font-family: 'Operator Mono', 'Fira Code', 'Consolas'
-    font-size: 1.3em
+    font-family: 'Inconsolata', 'Fira Code', 'Operator Mono', 'Consolas', Monaco
     margin-left: 18px
     .custom.char 
-        color: $light--green;
+        color: $light--green
     .custom.char.selected 
-        background-color: #264F78;
+        background-color: #264F78
     .custom.caret 
         width: 10px;
-        background-color: #3F51B5;
+        background-color: #3F51B5
 
 </style>

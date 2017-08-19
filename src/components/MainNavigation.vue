@@ -60,7 +60,7 @@
 </script>
 
 <style lang="sass">
-@import '../css/1-base/vars';
+@import '../css/1-base/vars'
 
 .nav 
     display: flex

@@ -1,7 +1,6 @@
 <template lang="pug">
 div
     .main-header
-        main-navigation
         intro-terminal
         custom-button-continue
     .about
@@ -33,9 +32,9 @@ div
              */
             scrollToAbout(e) {
                 if (e.keyCode == 13 && ! this.enterPressed) {
-                    var height = this.$children[2].$el.clientHeight
-                    window.scrollTo(height, 0)
-                    this.enterPressed = true
+                    let height = this.$children[2].$el.clientHeight;
+                    window.scrollTo(height, 0);
+                    this.enterPressed = true;
                 }
             }
         }
@@ -43,10 +42,12 @@ div
 </script>
 
 <style lang="sass">
-@import '../../css/0-tools/bourbon/bourbon';
-@import '../../css/1-base/vars';
+@import '../../css/0-tools/bourbon/bourbon'
+@import '../../css/1-base/vars'
 .main-header
-    @include linear-gradient(to bottom right, $primary__color--light, $primary__color)
+    background: url(../../assets/wallpaper.jpg)
+    -webkit-background-size: cover
+    background-size: cover
     height: 100vh
 
 .about

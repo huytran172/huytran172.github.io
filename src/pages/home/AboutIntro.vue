@@ -18,8 +18,8 @@
 </script>
 
 <style lang="sass">
-@import '../../css/0-tools/bourbon/bourbon';
-@import '../../css/1-base/vars';
+@import '../../css/0-tools/bourbon/bourbon'
+@import '../../css/1-base/vars'
 
 .intro
     display: flex
