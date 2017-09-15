@@ -4,7 +4,6 @@ div
         intro-terminal
         custom-button-continue
     .about
-        vertical-navigation
         about-intro
 </template>
 
@@ -17,7 +16,7 @@ div
 
     export default {
         name: 'Home',
-        components: { MainNavigation, VerticalNavigation, IntroTerminal, AboutIntro, CustomButtonContinue },
+        components: { MainNavigation, IntroTerminal, AboutIntro, CustomButtonContinue },
         created() {
             window.addEventListener('keyup', this.scrollToAbout)
         },
